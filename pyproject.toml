@@ -16,11 +16,3 @@ dependencies = [
 
 [project.entry-points."hyperspy.extensions"]
 hspy_ext_src_layout = "src/hspy_ext_src_layout"
-
-# https://github.com/pypa/hatch/discussions/427
-# https://github.com/pypa/hatch/issues/492
-[tool.hatch.build.targets.wheel.sources]
-"src" = ""
-
-[tool.hatch.build.targets.wheel]
-include = ["src/hspy_ext_src_layout"]
