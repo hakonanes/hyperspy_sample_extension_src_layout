@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hspy_ext_src_layout"
+license = {file = "LICENSE"}
+version = "0.1.0"
+requires-python = ">= 3.10"
+dependencies = [
+    "hyperspy >= 2",
+    "numpy",
+    "pytest",
+    "traits",
+]
+
+[project.entry-points."hyperspy.extensions"]
+hspy_ext_src_layout = "src/hspy_ext_src_layout"
+
+# https://github.com/pypa/hatch/discussions/427
+# https://github.com/pypa/hatch/issues/492
+[tool.hatch.build.targets.wheel.sources]
+"src" = ""
+
+[tool.hatch.build.targets.wheel]
+include = ["src/hspy_ext_src_layout"]
